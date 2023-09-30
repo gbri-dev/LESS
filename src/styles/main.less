@@ -7,6 +7,10 @@
   margin-bottom: 8px;
 }
 
+li{
+  list-style: none;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -24,6 +28,12 @@ body{
   max-width: 960px;
   width: 100%;
   margin: 0 auto;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   @media @breakpointmobile  {
     max-width: 70%;
   }
@@ -34,10 +44,13 @@ body{
 
 header{
   padding: 24px;
+
   .profile-avatar{
     display: block;
     margin: 0 auto 24px;
     border-radius: 50%;
+    width: 120px;
+    height: 120px;
   }
 }
 
@@ -55,6 +68,9 @@ header{
   &-description{
     font-size: 1em;
     opacity: .7;
+    .destaque{
+      text-decoration: underline;
+    }
   }
 }
 
@@ -65,7 +81,6 @@ header{
   width: 100%;
   margin: 0 auto;
  li {
-  list-style: none;
 
   img{
     transition: all ease .3s;
@@ -74,4 +89,28 @@ header{
     }
   }
  }
+}
+
+.projects-links {
+  margin-top: 32px;
+  &-item{
+    a{
+      text-decoration: none;
+      background-color: #colors[buttonColor];
+      color: #colors[textColor];
+      display: block;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 30px;
+      border: 2px solid #colors[buttonColor];
+      transition: ease .3s;
+      &:hover{
+        color: #colors[buttonColor];
+        background-color: transparent;
+        transform: scale(1.03);
+      }
+    }
+  }
 }
