@@ -1,4 +1,11 @@
-@import "variaveis.less";
+@import "maps.less";
+
+@breakpointmobile: ~"(max-width: 767px)";
+@breakpointtablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+.marginBotton8 {
+  margin-bottom: 8px;
+}
 
 *{
   margin: 0;
@@ -9,6 +16,62 @@
 }
 
 body{
-  background-color: @corDeFundo;
-  color: @corDaFonte;
+  background-color: #colors[backgroundColor];
+  color: #colors[textColor];
+}
+
+.container{
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  @media @breakpointmobile  {
+    max-width: 70%;
+  }
+  @media @breakpointtablet {
+    max-width: 80%;
+  }
+}
+
+header{
+  padding: 24px;
+  .profile-avatar{
+    display: block;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+  }
+}
+
+.profile-bio{
+  text-align: center;
+  &-name{
+    font-weight: bold;
+    font-size: 1.5em;
+    .marginBotton8();
+  }
+  &-subtitle{
+    font-size: 1.2em;
+    .marginBotton8();
+  }
+  &-description{
+    font-size: 1em;
+    opacity: .7;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 240px;
+  width: 100%;
+  margin: 0 auto;
+ li {
+  list-style: none;
+
+  img{
+    transition: all ease .3s;
+    &:hover{
+      transform: scale(1.3);
+    }
+  }
+ }
 }
